@@ -1,8 +1,8 @@
---Select * From Reportes.Registro_CarteraInicial Where Periodo = 202207
-Drop Table #CarteraInicial
+--Select * From Reportes.Registro_CarteraInicial Where Periodo = 202208
+--Drop Table #CarteraInicial
 Declare 
 	@FlActualizar Bit = 1,
-	@Periodo Int = 202207
+	@Periodo Int = 202208
 
 If @FlActualizar=1
 Begin
@@ -29,7 +29,7 @@ From #CarteraInicial
 
 -- Select * From #CarteraInicial Where CodCli In ('CL00931594', 'CL00940487')
 
-Drop Table #Cuo
+--Drop Table #Cuo
 Select distinct codven, codsede, nomven, codmesa, codcar, grupovnd CodCanal
 Into #Cuo
 -- Select *
@@ -44,11 +44,11 @@ Update #Cuo Set codven = 72, nomven = 'TORO LLALLI WALTER YIMI' Where codven=181
 
 ;With dt as (Select * From #Cuo)
 Insert Into Reportes.Registro_CarteraInicial(Periodo, CodVen, CodCli, CodMesa, CodSede, CodCar, CodCanal, CodDom)
-Select Distinct 202207, codven, U_BKP_CLIENTE CodCli, codmesa, codsede, codcar, CodCanal, U_BKP_CODDOM
+Select Distinct 202208, codven, U_BKP_CLIENTE CodCli, codmesa, codsede, codcar, CodCanal, U_BKP_CODDOM
 From dt a
 Inner Join [@BKS_CLIENTE_MESA] b On a.codmesa = U_BKP_CODMESA And Ltrim(Str(a.codven)) = u_bkp_codven And u_bkp_estado = 'A'
 Inner Join [@BKS_ZONAS] bb On b.U_BKP_CODZON = bb.Code And a.codsede = bb.U_BKP_CODSEDE
-Where Not Exists (Select * From Reportes.Registro_CarteraInicial c Where c.Periodo = 202207 And a.codven = c.codven)
+Where Not Exists (Select * From Reportes.Registro_CarteraInicial c Where c.Periodo = 202208 And a.codven = c.codven)
 And codven In (1201, 1593, 72)
 Group By codsede, codmesa, codcar, codven, U_BKP_CLIENTE, CodCanal, U_BKP_CODDOM
 Order BY CodVen, CodCli
@@ -63,7 +63,7 @@ Select distinct CodCli From Reportes.Registro_CarteraInicial Where Periodo = 202
 
 Select * From Reportes.Registro_CarteraInicial Where Periodo = 202204 And CodSede = 'AY'And CodCanal='07'
 
-Select * From Reportes.Registro_CarteraInicial Where Periodo = 202207 And CodCar = 'HIC07'
+Select * From Reportes.Registro_CarteraInicial Where Periodo = 202208 And CodCar = 'HIC07'
 
 Select * From [@BKS_CLIENTE_MESA] where U_BKP_CODVEN = '1989'
 
