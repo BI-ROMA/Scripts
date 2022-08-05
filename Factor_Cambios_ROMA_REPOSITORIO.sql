@@ -12,8 +12,8 @@
 		And a.codmesa Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Mesa] 
 		And a.grupovnd Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Canal] 
 		And a.codprv Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Prv]	
-		And a.codcar Collate SQL_Latin1_General_CP1_CI_AS = b.CodCartera
-		Where a.Periodo = 202207 And a.FactorCobertura != b.[Factor Cobertura]
+		And a.codcar Collate SQL_Latin1_General_CP1_CI_AS = b.Cartera
+		Where a.Periodo = 202207 And a.FactorCobertura != b.[Factor Cobertura] --and [Cod Prv] in ('PM00000066','PM00000027')
 	End
 	--select * from Temp.Cambio_dFactores
 	--update Temp.Cambio_dFactores set tipo = 'FactorCob' 
@@ -30,5 +30,6 @@
 		And a.codmesa Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Mesa] 
 		And a.grupovnd Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Canal] 
 		And a.codprv Collate SQL_Latin1_General_CP1_CI_AS = b.[Cod Prv]		
-		Where a.Periodo = 202207 And a.FactorVenta != b.[Factor Venta]
+		And a.codcar Collate SQL_Latin1_General_CP1_CI_AS = b.Cartera
+		Where a.Periodo = 202207 And a.FactorVenta != b.[Factor Venta] --and [Cod Prv] in ('PM00000066','PM00000027')
 	End
