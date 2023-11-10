@@ -19,7 +19,6 @@ CREATE TABLE [Ventas].[Fact_CarteraInicial_xVendedor] (
     CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimCategorias] FOREIGN KEY ([IdCat_xPrv]) REFERENCES [Ventas].[DimCategorias] ([IdCat_xPrv]),
     CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimFechas] FOREIGN KEY ([FechaKey]) REFERENCES [Ventas].[DimFechas] ([FechaKey]),
     CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimMesas] FOREIGN KEY ([IdMesa]) REFERENCES [Ventas].[DimMesas] ([IdMesa]),
-    CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimRelGeneral] FOREIGN KEY ([IdRelGeneral]) REFERENCES [Ventas].[DimRelGeneral] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimRelGeneral2] FOREIGN KEY ([IdRelGeneral2]) REFERENCES [Ventas].[DimRelGeneral2] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_CarteraInicial_xVendedor_DimVendedores] FOREIGN KEY ([IdVen]) REFERENCES [Ventas].[DimVendedores] ([IdVen])
 );

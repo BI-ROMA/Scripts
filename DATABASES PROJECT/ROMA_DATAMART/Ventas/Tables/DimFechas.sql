@@ -38,3 +38,21 @@ CREATE TABLE [Ventas].[DimFechas] (
 
 GO
 
+
+GRANT SELECT
+    ON OBJECT::[Ventas].[DimFechas] TO [RBI\uJefes_dVenta]
+    AS [dbo];
+GO
+
+
+GRANT SELECT
+    ON OBJECT::[Ventas].[DimFechas] TO [RBI\uSupervisores_dVenta]
+    AS [dbo];
+GO
+
+
+GRANT SELECT
+    ON OBJECT::[Ventas].[DimFechas] TO [RBI\uVendedores]
+    AS [dbo];
+GO
+

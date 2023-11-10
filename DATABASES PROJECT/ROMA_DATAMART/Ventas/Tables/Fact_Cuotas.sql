@@ -26,7 +26,6 @@ CREATE TABLE [Ventas].[Fact_Cuotas] (
     CONSTRAINT [FK_Fact_Cuotas_DimFechas] FOREIGN KEY ([FechaKey]) REFERENCES [Ventas].[DimFechas] ([FechaKey]),
     CONSTRAINT [FK_Fact_Cuotas_DimMesas] FOREIGN KEY ([IdMesa]) REFERENCES [Ventas].[DimMesas] ([IdMesa]),
     CONSTRAINT [FK_Fact_Cuotas_DimProveedores] FOREIGN KEY ([IdPrv]) REFERENCES [Ventas].[DimProveedores] ([IdPrv]),
-    CONSTRAINT [FK_Fact_Cuotas_DimRelGeneral] FOREIGN KEY ([IdRelGeneral]) REFERENCES [Ventas].[DimRelGeneral] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_Cuotas_DimRelGeneral2] FOREIGN KEY ([IdRelGeneral2]) REFERENCES [Ventas].[DimRelGeneral2] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_Cuotas_DimSedes] FOREIGN KEY ([IdSede]) REFERENCES [Ventas].[DimSedes] ([IdSede]),
     CONSTRAINT [FK_Fact_Cuotas_DimVendedores] FOREIGN KEY ([IdVen]) REFERENCES [Ventas].[DimVendedores] ([IdVen])

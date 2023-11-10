@@ -39,9 +39,7 @@ CREATE TABLE [Planillas].[Fact_Ventas] (
     CONSTRAINT [FK_Fact_Ventas_DimFechas] FOREIGN KEY ([FechaKey]) REFERENCES [Ventas].[DimFechas] ([FechaKey]),
     CONSTRAINT [FK_Fact_Ventas_DimMesas] FOREIGN KEY ([IdMesa]) REFERENCES [Ventas].[DimMesas] ([IdMesa]),
     CONSTRAINT [FK_Fact_Ventas_DimProveedores] FOREIGN KEY ([IdProveedor]) REFERENCES [Ventas].[DimProveedores] ([IdPrv]),
-    CONSTRAINT [FK_Fact_Ventas_DimRelGeneral] FOREIGN KEY ([IdRelGeneral]) REFERENCES [Ventas].[DimRelGeneral] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_Ventas_DimRelGeneral2] FOREIGN KEY ([IdRelGeneral2]) REFERENCES [Ventas].[DimRelGeneral2] ([IdRelGeneral]),
-    CONSTRAINT [FK_Fact_Ventas_DimRelGeneral21] FOREIGN KEY ([IdRelGeneral2]) REFERENCES [Ventas].[DimRelGeneral2] ([IdRelGeneral]),
     CONSTRAINT [FK_Fact_Ventas_DimSedes] FOREIGN KEY ([IdSede]) REFERENCES [Ventas].[DimSedes] ([IdSede]),
     CONSTRAINT [FK_Fact_Ventas_DimTipoVenta] FOREIGN KEY ([IdTipoVenta]) REFERENCES [Ventas].[DimTipoVenta] ([IdTipoVenta]),
     CONSTRAINT [FK_Fact_Ventas_DimVendedores] FOREIGN KEY ([IdVendedor]) REFERENCES [Ventas].[DimVendedores] ([IdVen])

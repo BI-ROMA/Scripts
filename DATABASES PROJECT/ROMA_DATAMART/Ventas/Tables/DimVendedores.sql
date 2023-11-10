@@ -21,3 +21,9 @@ CREATE TABLE [Ventas].[DimVendedores] (
 
 GO
 
+
+GRANT SELECT
+    ON OBJECT::[Ventas].[DimVendedores] TO [DSROMASAC\droma]
+    AS [dbo];
+GO
+
