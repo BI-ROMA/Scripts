@@ -1,0 +1,5 @@
+CREATE USER [DSROMASAC\g_lopez] FOR LOGIN [DSROMASAC\g_lopez];
+
+
+GO
+

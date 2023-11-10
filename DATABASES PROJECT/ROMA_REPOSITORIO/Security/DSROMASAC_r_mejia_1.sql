@@ -1,0 +1,5 @@
+CREATE USER [DSROMASAC\r_mejia] FOR LOGIN [DSROMASAC\r_mejia];
+
+
+GO
+

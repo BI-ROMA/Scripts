@@ -1,0 +1,16 @@
+CREATE TABLE [Temp].[MetasKCP202105] (
+    [EJECUTIVO]  NVARCHAR (255) NULL,
+    [CIUDAD]     NVARCHAR (255) NULL,
+    [COD]        NVARCHAR (255) NULL,
+    [CLIENTE]    NVARCHAR (255) NULL,
+    [CUOTA]      MONEY          NULL,
+    [CIERRE]     MONEY          NULL,
+    [ALCANCE]    FLOAT (53)     NULL,
+    [COMENTARIO] NVARCHAR (255) NULL,
+    [INCIDENCIA] FLOAT (53)     NULL,
+    [PREMIO]     MONEY          NULL
+);
+
+
+GO
+

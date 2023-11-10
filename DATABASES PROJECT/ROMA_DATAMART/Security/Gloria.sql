@@ -1,0 +1,6 @@
+CREATE SCHEMA [Gloria]
+    AUTHORIZATION [dbo];
+
+
+GO
+

@@ -1,0 +1,5 @@
+CREATE USER [DSROMASAC\droma] FOR LOGIN [DSROMASAC\droma];
+
+
+GO
+

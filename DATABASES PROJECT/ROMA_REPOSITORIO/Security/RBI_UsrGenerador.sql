@@ -1,0 +1,6 @@
+CREATE LOGIN [RBI\UsrGenerador]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+
+
+GO
+

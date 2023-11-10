@@ -1,0 +1,41 @@
+CREATE TABLE [Gloria].[Extractor_Clientes] (
+    [IdProceso]    INT              NULL,
+    [TipoNegocio]  VARCHAR (100)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cdist]        NVARCHAR (4)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ccliente_d]   NVARCHAR (20)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [drazon]       NVARCHAR (100)   COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ctipdid]      NVARCHAR (2)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cdoc]         NVARCHAR (15)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cgiro_1]      NVARCHAR (2)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ccatclt_1]    NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ccatclt_2]    NVARCHAR (2)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ctlf_1]       NVARCHAR (20)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ddir_uni]     NVARCHAR (150)   COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [dref]         NVARCHAR (100)   COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cubigeo]      NVARCHAR (10)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [nvisicoolers] NVARCHAR (2)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cgruven1]     NVARCHAR (5)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ndia1]        NVARCHAR (7)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [cgruven2]     NVARCHAR (10)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [ndia2]        NVARCHAR (7)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [x]            NUMERIC (20, 16) NULL,
+    [y]            NUMERIC (20, 16) NULL,
+    [freg]         NVARCHAR (8)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [dia_ref]      NVARCHAR (20)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [lunes]        NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [martes]       NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [miercoles]    NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [jueves]       NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [viernes]      NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [sabado]       NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [domingo]      NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [estado]       NVARCHAR (1)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [domi]         NVARCHAR (3)     COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [x_C]          NVARCHAR (20)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [y_C]          NVARCHAR (20)    COLLATE SQL_Latin1_General_CP850_CI_AS NULL,
+    [FlValido]     CHAR (1)         NULL
+);
+
+
+GO
+

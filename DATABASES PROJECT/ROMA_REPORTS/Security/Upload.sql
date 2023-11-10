@@ -1,0 +1,6 @@
+CREATE SCHEMA [Upload]
+    AUTHORIZATION [dbo];
+
+
+GO
+

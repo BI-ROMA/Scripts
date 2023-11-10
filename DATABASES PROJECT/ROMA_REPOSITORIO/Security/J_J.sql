@@ -1,0 +1,6 @@
+CREATE SCHEMA [J&J]
+    AUTHORIZATION [dbo];
+
+
+GO
+

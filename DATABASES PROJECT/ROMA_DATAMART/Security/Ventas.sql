@@ -1,0 +1,6 @@
+CREATE SCHEMA [Ventas]
+    AUTHORIZATION [dbo];
+
+
+GO
+

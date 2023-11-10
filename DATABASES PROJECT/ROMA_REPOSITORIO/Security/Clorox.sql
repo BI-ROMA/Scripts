@@ -1,0 +1,6 @@
+CREATE SCHEMA [Clorox]
+    AUTHORIZATION [dbo];
+
+
+GO
+

@@ -1,0 +1,43 @@
+CREATE TABLE [Temp].[tmpdigi] (
+    [Cor]             VARCHAR (4)     NULL,
+    [Id]              INT             IDENTITY (1, 1) NOT NULL,
+    [ped_fecinicio]   DATETIME        NULL,
+    [ped_fecfin]      DATETIME        NULL,
+    [ped_fecregistro] DATETIME        NULL,
+    [fec_pedido]      DATETIME        NULL,
+    [IdCli]           INT             NULL,
+    [IdPrd]           SMALLINT        NULL,
+    [IdCartera]       SMALLINT        NULL,
+    [IdVen]           SMALLINT        NULL,
+    [Soles]           NUMERIC (38, 2) NULL,
+    [UMES]            NUMERIC (38, 6) NULL,
+    [Cartera]         SMALLINT        NULL,
+    [PartitionMonth]  INT             NULL,
+    [CliCodFull]      VARCHAR (20)    NULL,
+    [CliCod]          VARCHAR (20)    NULL,
+    [IdMesa]          SMALLINT        NULL,
+    [IdSup]           SMALLINT        NULL,
+    [IdSede]          SMALLINT        NULL,
+    [IdCan]           SMALLINT        NULL,
+    [PartitionDay]    INT             NULL,
+    [Cantidad]        DECIMAL (18, 5) NULL,
+    [FechaKey]        INT             NULL,
+    [IdVen_Final]     SMALLINT        NULL,
+    [IdVen_Original]  SMALLINT        NULL,
+    [IdProducto]      SMALLINT        NULL,
+    [IdCarteraNew]    SMALLINT        NULL,
+    [IdHora]          INT             NULL,
+    [Cantidad_OC]     DECIMAL (18, 2) NULL,
+    [MonIGV_OC]       DECIMAL (18, 2) NULL,
+    [UMES_OC]         DECIMAL (18, 2) NULL,
+    [IdAlmacen]       SMALLINT        NULL,
+    [IdPedido]        INT             NULL,
+    [TiPedido]        CHAR (3)        NULL,
+    [CoMotivo]        VARCHAR (4)     NULL,
+    [IdJefe_dVenta]   SMALLINT        NULL,
+    [Item]            SMALLINT        NULL
+);
+
+
+GO
+
