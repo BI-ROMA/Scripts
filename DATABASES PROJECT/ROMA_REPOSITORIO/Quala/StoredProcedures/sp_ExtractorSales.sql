@@ -22,7 +22,7 @@ AS
 		f.CodCli PartnerCode,
 		convert(varchar, b.Fecha, 103) Date, case h.IdAlmacen when 1 then '03' when 3 then '02' when 4 then '01' else '99' end CompanyCode, b.NuNombreMes Period
 	into #ExtractorSales
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join ROMA_DATAMART.Ventas.DimFechas b on a.FechaKey = b.FechaKey
 	inner join ROMA_DATAMART.Ventas.DimProductos c on a.IdProducto = c.IdPro
 	inner join ROMA_DATAMART.Ventas.DimVendedores d on a.IdVendedor = d.IdVen

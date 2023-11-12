@@ -4,7 +4,7 @@ as
 
 begin
 	
-	--declare @Period char(6) = 202310, @datekey char(8) = 20231031
+	--declare @Period char(6) = 202311, @datekey char(8) = 20231111
 
 
 	--commissions

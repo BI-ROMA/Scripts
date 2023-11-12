@@ -7,15 +7,15 @@ begin
 	/*
 	select 
 		FechaKey, b.IdAlmacen, a.IdProducto, sum(Cantidad) Cantidad, sum(TotalIGV) Total
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join ROMA_DATAMART.Ventas.DimSedes b on a.IdSede = b.IdSede
 	where fechakey = convert(varchar, GETDATE()-1,112) and a.IdProveedor = 19 and IdProducto =1923
 	group by FechaKey, b.IdAlmacen, a.IdProducto
 	
-	select * from ROMA_DATAMART.Planillas.Fact_Ventas a
+	select * from ROMA_DATAMART.ventas.Fact_Ventas a
 	where fechakey = convert(varchar, GETDATE()-1,112) and a.IdProveedor = 19 and IdProducto =1923
 
-		select * from ROMA_DATAMART.Planillas.Fact_Ventas a
+		select * from ROMA_DATAMART.ventas.Fact_Ventas a
 	where fechakey = convert(varchar, GETDATE()-2,112) and a.IdProveedor = 19 and IdProducto =1923
 	*/
 

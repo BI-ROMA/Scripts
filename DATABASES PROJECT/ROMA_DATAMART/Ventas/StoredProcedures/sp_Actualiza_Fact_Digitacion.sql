@@ -1,4 +1,4 @@
-CREATE Proc [Ventas].[sp_Fact_Digitacion] 
+CREATE Proc [Ventas].[sp_Actualiza_Fact_Digitacion] 
 @pPeriodo Char(8) = Null
 As
 Begin
@@ -619,11 +619,10 @@ Begin
 	Inner Join Ventas.DimSedes sed On isnull(a.codsede, a.codsed) = sed.CodSede
 	Order By 1 Desc
 
-	exec [Ventas].[SP_Fact_Cuota_Diaria]
+	exec [Ventas].[sp_Actualiza_Fact_CuotasDiarias]
 
 	Set NoCount Off
 
 End
-
 GO
 

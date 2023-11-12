@@ -21,7 +21,7 @@ begin
 	select  
 			LEFT(FechaKey, 6) Periodo, IdMesa, IdCartera, IdCat_xPrv, IdProveedor, IdSupervisor, IdJefe_dVenta, SUM(TotalIGV) TotalIGV
 	into #fact_ventas 
-	from ROMA_DATAMART.Planillas.Fact_Ventas
+	from ROMA_DATAMART.ventas.Fact_Ventas
 	where left(FechaKey, 6) = @period and ((IdProveedor = 16 and IdCartera = 131) or (IdProveedor <> 16)) and IdMesa not in (5,9,22,23)
 	group by 
 			left(FechaKey, 6),		  IdMesa, IdCartera, IdCat_xPrv, IdProveedor, IdSupervisor, IdJefe_dVenta
@@ -48,7 +48,7 @@ begin
 	;with dt as (
 		select  
 				left(fechakey, 6) periodo, idmesa, idcartera, idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa, idcliente, sum(TotalIGV) total
-		from ROMA_DATAMART.planillas.fact_ventas a
+		from ROMA_DATAMART.ventas.fact_ventas a
 		where left(fechakey, 6) = @period and ((IdProveedor = 16 and IdCartera = 131) or (IdProveedor <> 16)) and IdMesa not in (5,9,22,23)
 		group by 
 				left(fechakey, 6),		   idmesa, idcartera, idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa, idcliente
@@ -70,7 +70,7 @@ begin
 	select  
 			left(fechakey, 6) periodo, idmesa, idcartera,  idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa, sum(totaligv) totaligv
 	into #fact_ventas_ant 
-	from ROMA_DATAMART.planillas.fact_ventas 
+	from ROMA_DATAMART.ventas.fact_ventas 
 	where left(fechakey, 6) = @periodoant and ((IdProveedor = 16 and IdCartera = 131) or (IdProveedor <> 16)) and IdMesa not in (5,9,22,23)
 	group by 
 			left(fechakey, 6),		  idmesa, idcartera,  idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa
@@ -97,7 +97,7 @@ begin
 	select  
 		left(fechakey, 6) periodo, idmesa, idcartera,  idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa, sum(totaligv) totaligv
 	into #fact_devoluciones
-	from ROMA_DATAMART.planillas.fact_ventas 
+	from ROMA_DATAMART.ventas.fact_ventas 
 	where left(fechakey, 6) = @period and ((IdProveedor = 16 and IdCartera = 131) or (IdProveedor <> 16)) and IdMesa not in (5,9,22,23) and TotalIGV < 0
 	group by 
 		left(fechakey, 6),		  idmesa, idcartera,  idcat_xprv, IdProveedor, idsupervisor, idjefe_dventa

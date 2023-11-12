@@ -648,13 +648,13 @@ Set NoCount On
 	From #DataFinal a
 	Inner Join dt b On a.FechaKey = b.FechaKey And a.IdDocumento = b.IdDocumento And a.IdProducto = b.IdProducto
 
-	Delete Planillas.Fact_Ventas Where Left(FechaKey, 6) = @periodo	
+	Delete Ventas.Fact_Ventas Where Left(FechaKey, 6) = @periodo	
 
-	Insert Into Planillas.Fact_Ventas(FechaKey, IdSede, IdMesa, IdCanal, IdProveedor, IdProducto, IdCat_xPrv, IdVendedor, IdCliente, 
+	Insert Into Ventas.Fact_Ventas(FechaKey, IdSede, IdMesa, IdCanal, IdProveedor, IdProducto, IdCat_xPrv, IdVendedor, IdCliente, 
 	IdDocumento, Item, bonificacion, Cantidad, Total, TotalIGV, PartitionMonth, IdSupervisor, IdJefe_dVenta, IdCartera, FactorUME, IdRelGeneral2, 
 	IdRelGeneral, IdTipoVenta, Item2, priceBefDi, VatPrcnt, CodigoPromocion, DiscPrcnt, price, costo)
 	Select Distinct * From #DataFinal a
-	--select top 10 * from planillas.fact_ventas
+	--select top 10 * from ventas.fact_ventas
 	
 
 	Update a Set TaxDate = Convert(Varchar(20), b.TaxDate, 103)

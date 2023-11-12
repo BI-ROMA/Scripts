@@ -109,7 +109,7 @@ Begin
 			CodVen, NomVen, CodPro, prv.CodPrv/*, CodProm*/, doc.TiDocumento, 
 			cli.CodCli, cli.CodDom, cli.TiCliente, cli.NomCli,cli.Direccion, c.NombreDiaAbr, b.CodCat, b.NomCat, prv.NomPrvAbr, car.CodCartera
 			-- Select *
-			From ROMA_DATAMART.Planillas.Fact_Ventas a
+			From ROMA_DATAMART.ventas.Fact_Ventas a
 			Inner Join ROMA_DATAMART.Ventas.DimCarteras car On a.IdCartera = car.IdCartera
 			Inner Join ROMA_DATAMART.ventas.DimDocumentos doc On a.IdDocumento = doc.IdDoc
 			Inner Join ROMA_DATAMART.Ventas.DimCategorias b On a.IdCat_xPrv = b.IdCat_xPrv

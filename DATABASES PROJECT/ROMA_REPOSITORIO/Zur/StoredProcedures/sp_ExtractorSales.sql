@@ -1,4 +1,4 @@
-CREATE procedure Zur.sp_ExtractorSales
+CREATE procedure [Zur].[sp_ExtractorSales]
 
 as begin
 
@@ -47,7 +47,7 @@ as begin
 		'' ref10,
 		convert(varchar(6), d.Fecha, 112) Period
 	into #ExtractorSales
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join ROMA_DATAMART.Ventas.DimProveedores b on a.IdProveedor = b.IdPrv
 	inner join ROMA_DATAMART.Ventas.DimDocumentos c on a.IdDocumento = c.IdDoc
 	inner join ROMA_DATAMART.Ventas.DimFechas d on a.FechaKey = d.FechaKey

@@ -1,4 +1,4 @@
-CREATE Procedure [Ventas].[SP_Actualiza_Fact_Inventarios]
+CREATE Procedure [Ventas].[sp_Actualiza_Fact_Inventarios]
 As
 
 Begin 
@@ -48,7 +48,7 @@ Begin
 				Sum(TotalIGV)/Max(b.DiasValidosTranscurridos) Vta,
 				Sum(Cantidad)/Max(b.DiasValidosTranscurridos)*Max(b.FactorPryMes) QtdPry,
 				Sum(TotalIGV)/Max(b.DiasValidosTranscurridos)*Max(b.FactorPryMes) VtaPry				
-				From Planillas.Fact_Ventas a
+				From Ventas.Fact_Ventas a
 				Inner Join Ventas.DimSedes sed On a.IdSede = sed.IdSede
 				Inner Join dtFechas b On a.FechaKey = b.FechaKey
 				Group By IdProducto, sed.IdAlmacen)

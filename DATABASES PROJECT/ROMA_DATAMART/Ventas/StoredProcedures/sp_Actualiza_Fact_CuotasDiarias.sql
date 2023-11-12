@@ -1,6 +1,6 @@
 
 
-CREATE procedure [Ventas].[SP_Fact_Cuota_Diaria] 
+CREATE procedure [Ventas].[sp_Actualiza_Fact_CuotasDiarias] 
 
 as 
 
@@ -18,7 +18,7 @@ begin
 	select 
 		left(a.FechaKey,6) periodo, IdSede, IdVendedor, IdCartera, IdSupervisor, IdCanal, CodCat, idmesa, IdProveedor, sum(TotalIGV) TotalIGV, convert(decimal(18,4), 0) FactorSoles
 	into #ventas
-	from Planillas.Fact_Ventas a
+	from ventas.Fact_Ventas a
 	inner join ventas.DimCategorias b on a.IdCat_xPrv = b.IdCat_xPrv
 	where left(a.FechaKey,6) = @periodo
 	group by left(a.FechaKey,6), IdSede, IdVendedor, IdCartera, IdSupervisor, IdCanal, CodCat, idmesa, IdProveedor
@@ -87,6 +87,5 @@ begin
 
 
 end
-
 GO
 

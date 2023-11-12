@@ -33,7 +33,7 @@ begin
 		   a.Total/a.Cantidad Price,
 		   a.TotalIGV Sale 
 	into #data
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join ROMA_DATAMART.ventas.DimClientes b on b.IdCli = a.IdCliente
 	inner join ROMA_DATAMART.ventas.DimVendedores c on c.IdVen = a.IdVendedor
 	inner join ROMA_DATAMART.ventas.DimSedes d on d.IdSede = a.IdSede

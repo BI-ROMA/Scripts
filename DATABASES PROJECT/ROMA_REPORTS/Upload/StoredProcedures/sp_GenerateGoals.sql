@@ -145,7 +145,7 @@ BEGIN
 
 	Select Distinct a.*
 	Into #Fact_Ventas
-	From ROMA_DATAMART.Planillas.Fact_Ventas a
+	From ROMA_DATAMART.ventas.Fact_Ventas a
 	Inner Join ROMA_DATAMART.Ventas.DimClientes b On a.IdCliente = b.IdCli
 	Where Left(FechaKey, 6) >= Convert(Char(6), DateAdd(Month,-6, Cast(@Period+'01' As Date)), 112)
 			and left(FechaKey,6) < Convert(Char(6),  GETDATE(), 112)

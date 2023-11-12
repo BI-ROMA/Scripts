@@ -21,7 +21,7 @@ begin
 	select  
 		LEFT(FechaKey, 6) Periodo, IdCartera, IdSupervisor, IdCat_xPrv, IdProveedor, IdJefe_dVenta, SUM(TotalIGV) TotalIGV
 	into #fact_ventas 
-	from ROMA_DATAMART.Planillas.Fact_Ventas
+	from ROMA_DATAMART.ventas.Fact_Ventas
 	where left(FechaKey, 6) = @Period
 	group by 
 		left(FechaKey, 6),         IdCartera, IdSupervisor, IdCat_xPrv,	IdProveedor, IdJefe_dVenta
@@ -52,7 +52,7 @@ begin
 	;with dt as (
 		select  
 				left(fechakey, 6) periodo, IdCartera, idsupervisor, idcat_xprv, IdProveedor, idjefe_dventa, idcliente, sum(TotalIGV) total
-		from ROMA_DATAMART.planillas.fact_ventas a
+		from ROMA_DATAMART.ventas.fact_ventas a
 		where left(fechakey, 6) = @Period 
 		group by 
 				left(fechakey, 6),		   IdCartera, idsupervisor, idcat_xprv, IdProveedor, idjefe_dventa, idcliente
@@ -76,7 +76,7 @@ begin
 	select  
 		left(fechakey, 6) periodo, IdCartera, idsupervisor, idcat_xprv, IdProveedor, idjefe_dventa, sum(totaligv) totaligv
 	into #fact_ventas_ant 
-	from ROMA_DATAMART.planillas.fact_ventas 
+	from ROMA_DATAMART.ventas.fact_ventas 
 	where left(fechakey, 6) = @periodoant
 	group by 
 		left(fechakey, 6),		   IdCartera, idsupervisor, idcat_xprv, IdProveedor, idjefe_dventa
@@ -102,7 +102,7 @@ begin
 	select  
 		left(fechakey, 6) periodo, IdCartera, IdSupervisor, idcat_xprv, IdProveedor, idjefe_dventa, sum(totaligv) totaligv
 	into #fact_devoluciones
-	from ROMA_DATAMART.planillas.fact_ventas 
+	from ROMA_DATAMART.ventas.fact_ventas 
 	where left(fechakey, 6) = @Period and TotalIGV < 0
 	group by 
 		left(fechakey, 6),		  IdCartera, idsupervisor, idcat_xprv, IdProveedor, idjefe_dventa

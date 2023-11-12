@@ -21,7 +21,7 @@ begin
 	select  
 			LEFT(a.FechaKey, 6) Periodo, b.ExecutiveCode, a.IdProveedor, SUM(a.TotalIGV) TotalIGV
 	into #fact_ventas 
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join Reports.SupplierDistributionsExecutive b on a.IdProveedor = b.IdSupplier
 	where left(a.FechaKey, 6) = @Period
 	group by 
@@ -54,7 +54,7 @@ begin
 	;with dt as (
 		select  
 				left(a.fechakey, 6) periodo, b.ExecutiveCode, a.IdProveedor, a.idcliente, sum(a.TotalIGV) total
-		from ROMA_DATAMART.planillas.fact_ventas a
+		from ROMA_DATAMART.ventas.fact_ventas a
 		inner join Reports.SupplierDistributionsExecutive b on a.IdProveedor = b.IdSupplier
 		where left(a.fechakey, 6) = @Period 
 		group by 
@@ -78,7 +78,7 @@ begin
 	select  
 			left(a.fechakey, 6) periodo, b.ExecutiveCode, a.IdProveedor,  sum(a.totaligv) totaligv
 	into #fact_ventas_ant 
-	from ROMA_DATAMART.planillas.fact_ventas a
+	from ROMA_DATAMART.ventas.fact_ventas a
 	inner join Reports.SupplierDistributionsExecutive b on a.IdProveedor = b.IdSupplier
 	where left(a.fechakey, 6) = @periodoant
 	group by 
@@ -106,7 +106,7 @@ begin
 	select  
 		left(a.fechakey, 6) periodo, b.ExecutiveCode, a.IdProveedor, sum(a.totaligv) totaligv
 	into #fact_devoluciones
-	from ROMA_DATAMART.planillas.fact_ventas a
+	from ROMA_DATAMART.ventas.fact_ventas a
 	inner join Reports.SupplierDistributionsExecutive b on a.IdProveedor = b.IdSupplier 
 	where left(a.fechakey, 6) = @Period and a.TotalIGV < 0
 	group by 

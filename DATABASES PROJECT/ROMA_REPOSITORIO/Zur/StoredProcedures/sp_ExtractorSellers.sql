@@ -1,4 +1,4 @@
-CREATE procedure Zur.sp_ExtractorSellers
+CREATE procedure [Zur].[sp_ExtractorSellers]
 AS
 BEGIN
 
@@ -29,7 +29,7 @@ BEGIN
 		'' Ref9,
 		'' Ref10
 	into #ExtractorSellers	
-	from ROMA_DATAMART.Planillas.Fact_Ventas a
+	from ROMA_DATAMART.ventas.Fact_Ventas a
 	inner join ROMA_DATAMART.Ventas.DimVendedores b on a.IdVendedor = b.IdVen
 	inner join ROMA_DATAMART.Ventas.DimSedes c on a.IdSede = c.IdSede
 	inner join ROMA_DATAMART.Ventas.DimCanales d on b.CodCan = d.CodCan

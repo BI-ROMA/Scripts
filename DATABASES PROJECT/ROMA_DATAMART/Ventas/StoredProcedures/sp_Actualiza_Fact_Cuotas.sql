@@ -1,4 +1,4 @@
-CREATE Procedure [Ventas].[sp_Fact_Cuotas]
+CREATE Procedure [Ventas].[sp_Actualiza_Fact_Cuotas]
 @pPeriodo Char(6) = Null
 As
 
@@ -242,6 +242,5 @@ Begin
 
 	
 End
-
 GO
 
